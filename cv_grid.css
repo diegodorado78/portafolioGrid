@@ -150,4 +150,23 @@ border-radius: 5px;
     float:right;
 }
 
-@media(max)
+@media (max-width: 600px){
+    body,.grid,.header{
+        margin: 2%;
+        display: grid;
+    }
+   .grid{
+    grid-template-areas: 
+    'header'
+    'sidebar'
+    'post1'
+    'post2'
+    'footer';  
+   }
+   .header{
+    grid-template-columns: 1fr ;
+   }
+   .header h1,.header img,.header h4 {
+    grid-column: 1/6;
+   }
+}
