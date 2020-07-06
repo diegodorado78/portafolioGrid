@@ -1,0 +1,153 @@
+/* 
+primary:#007bff
+dark:#343a40
+lightgrey: #6c757d;
+verde success: #28a745
+azul oscuro:#141d26
+danger: #dc3545
+*/
+*{
+    margin:0; /* defino margin y padding cero para quitar los default*/
+    padding: 0; 
+}
+body{
+    font-size: 20px;
+    font-family: "poppins",Helvetica;
+    background-image: url("./imagenes/background1.jpg");
+    color: white;
+    
+}
+/*ESTILOS GENERALES DEL GRID*/
+.grid{
+    display: grid;
+    width: 80%;
+    grid-template-areas: 
+    'header header header header header header'
+    'post1 post1 post1 post1 post1 sidebar'
+    'post2 post2 post2 post2 post2 post2'
+    'footer footer footer footer footer footer';
+    margin: auto 10%;
+    gap: 0.5em;/* espacio entre rejillas podria hacer lo mismo con margin de los elementos*/
+}
+/*ESTILOS HEADER*/
+.div_header{grid-area: header;}
+.header{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    color: black;
+}
+.header h1{
+    font-size: 3rem;
+    grid-column: 1/5;/* el contend ocupara de la linea 1 a la 5*/
+}
+.header img{
+    grid-column: 5/7;/* espacio que ocupa en grid de 6 fr*/
+    grid-row: 1/4;/* espacio que ocupa en grid de 3fr*/
+    max-width: 100%;
+    justify-self: right;
+}
+.header h4{
+    grid-column: 1/5;
+    font-size: 1.5rem;
+}
+.nav-bar{ /* al usar > debe ser hijo directo*/
+    background-color: #343a40;
+}
+.nav-bar  ul{/* la etiqueta caja ul seria el grid dentro del nav*/
+    display: grid;
+    list-style: none;
+    grid-template-columns: repeat(5,auto);/* podria ser repeat(5,1fr) o 1fr 2fr 3fr*/
+    grid-auto-rows: minmax(60px,auto);/*propiedad para controlar altura de las filas*/
+    justify-items: center;
+    align-items: center;
+}
+.nav-bar ul li a{ /* es  mejor especificar el orden de las etiquetas*/
+    text-decoration: none;
+    color: white;
+}
+/* ESTILOS MAIN*/
+.post1{
+     grid-area: post1;
+/*PONER LOS BLOQUES EN FILAS (QUITO <br> en html)
+display: grid;
+grid-template-columns:1fr 1fr ;
+grid-auto-flow: row;*/ 
+     background-color: white;
+     color:#6c757d; 
+     padding: 1%;
+     text-align: justify;   
+     border-radius: 5px;
+}
+#span-mas{
+    display: none;
+}
+.boton-mas{
+    text-decoration: none;
+    color:#007bff ;
+}
+
+ .post1 h3,.post2 h3{
+     color: #141d26;
+     font-size: 2rem;
+ }
+ .post1 li{
+     list-style: none;
+ }
+/* ESTILOS SIDEBAR*/
+
+.sidebar{ grid-area: sidebar;
+color: black;
+background-color: white;
+border-radius: 5px;
+}
+.sidebar img{
+    max-width: 300px;
+    border-radius: 50%;
+    margin: auto 10%;
+}
+.sidebar input{
+width: 80%;
+min-height: 20px;
+border-radius: 5px;
+}
+.sidebar input[type="submit"]{
+    background: #007bff;
+    padding: 2%;
+    font-size: 1rem;
+    color: white;
+    width: 20%;
+    margin: 5% 20% auto 0;
+    cursor: pointer;
+    float: right;
+}
+/* ESTILOS POST2*/
+.post2{
+    grid-area: post2;
+    background-color: white;
+    color:#6c757d; 
+    padding: 1%;
+    text-align: justify;   
+    border-radius: 5px;
+}
+.post2 >h5,.sidebar > h3{
+    margin: 0px 0px 1% 0px;
+    background-color:#343a40 ;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+/* ESTILOS FOOTER*/
+.footer{
+    grid-area: footer;
+}
+.footer a{
+    border: 1px solid #141d26;
+    border-radius: 5px;
+    padding: 0px 1%;
+    text-decoration: none;
+    color: black;
+    float:right;
+}
+
+@media(max)
