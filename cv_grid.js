@@ -1,5 +1,5 @@
 var btn_mas= document.querySelector(".boton-mas");
-var span=document.querySelector("#span-mas");
+var span=document.querySelector(".span-mas");
 btn_mas.textContent="Leer más";//textContent para agregar texto
 
 btn_mas.addEventListener("click",function(){

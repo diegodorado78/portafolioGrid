@@ -42,7 +42,8 @@ body{
 }
 .header img{
     grid-column: 5/7;/* espacio que ocupa en grid de 6 fr*/
-    grid-row: 1/4;/* espacio que ocupa en grid de 3fr*/
+    grid-row: 1/4;/* espacio que ocupa 
+    en grid de 3fr*/
     max-width: 100%;
     justify-self: right;
 }
