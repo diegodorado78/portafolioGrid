@@ -44,7 +44,7 @@ body{
     grid-column: 5/7;/* espacio que ocupa en grid de 6 fr*/
     grid-row: 1/4;/* espacio que ocupa 
     en grid de 3fr*/
-    max-width: 100%;
+    width: 100%;
     justify-self: right;
 }
 .header h4{
@@ -53,6 +53,8 @@ body{
 }
 .nav-bar{ /* al usar > debe ser hijo directo*/
     background-color: #343a40;
+    width: 100%;
+
 }
 .nav-bar  ul{/* la etiqueta caja ul seria el grid dentro del nav*/
     display: grid;
@@ -80,7 +82,6 @@ grid-auto-flow: row;*/
     width: 100%;
      background-color: white;
      color:#6c757d; 
-     padding: 1%;
      text-align: justify;   
      border-radius: 5px;
 }
@@ -134,9 +135,9 @@ border-radius: 5px;
 /* ESTILOS POST2*/
 .post2{
     grid-area: post2;
+    width: 100%;
     background-color: white;
     color:#6c757d; 
-    padding: 1%;
     text-align: justify;   
     border-radius: 5px;
 }
@@ -187,8 +188,11 @@ border-radius: 5px;
    .header h1,.header img,.header h4 {
     grid-column: 1/6;
    }
+   .nav-bar {
+    font-size: 80%;}
    .sidebar img{
-    margin: 0px 20%;
+    padding: 0px 10%;
+    margin: 0px 10%;
 }
   
 }
