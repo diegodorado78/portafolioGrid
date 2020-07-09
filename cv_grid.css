@@ -15,7 +15,6 @@ body{
     font-family: "poppins",Helvetica;
     background-image: url("./imagenes/background1.jpg");
     color: white;
-    
 }
 /*ESTILOS GENERALES DEL GRID*/
 .grid{
@@ -27,7 +26,7 @@ body{
     'post2 post2 post2 post2 post2 post2'
     'footer footer footer footer footer footer';
     margin: auto 10%;
-    gap: 0.5em;/* espacio entre rejillas podria hacer lo mismo con margin de los elementos*/
+    gap: 0.3em;/* espacio entre rejillas podria hacer lo mismo con margin de los elementos*/
 }
 /*ESTILOS HEADER*/
 .div_header{grid-area: header;}
@@ -35,6 +34,9 @@ body{
     display: grid;
     grid-template-columns: repeat(6,1fr);
     color: black;
+}
+.menu_bar{
+    display: none;
 }
 .header h1{
     font-size: 3rem;
@@ -54,7 +56,6 @@ body{
 .nav-bar{ /* al usar > debe ser hijo directo*/
     background-color: #343a40;
     width: 100%;
-
 }
 .nav-bar  ul{/* la etiqueta caja ul seria el grid dentro del nav*/
     display: grid;
@@ -69,6 +70,9 @@ body{
     text-decoration: none;
     color: white;
 }
+header nav ul li a:hover {
+    text-shadow: 3px 3px 3px #cccc;
+    font-size: 1.2rem;}
 /* ESTILOS MAIN*/
 #span-mas{
     display: none;
@@ -85,8 +89,7 @@ grid-auto-flow: row;*/
      text-align: justify;   
      border-radius: 5px;
 }
-
-.boton-mas{
+#boton-mas{
     text-decoration: none;
     color:#007bff ;
 }
@@ -101,7 +104,6 @@ grid-auto-flow: row;*/
 /* ESTILOS SIDEBAR*/
 
 .sidebar{ grid-area: sidebar;
-
 color: black;
 background-color: white;
 border-radius: 5px;
@@ -155,7 +157,6 @@ border-radius: 5px;
     padding: 0px 8%;
     color:#343a40;
     text-align: center;
-    
 }
 .footer a{
     border: 1px solid #141d26;
@@ -165,7 +166,7 @@ border-radius: 5px;
     color: black;
     float:right;
 }
-
+/* MEDIA QUERIES*/
 @media (max-width: 700px){
     body,.grid,.header{
         padding: 0px;
@@ -174,7 +175,6 @@ border-radius: 5px;
    .grid{
        width: 90%;
        margin: 0px 5%;
-
     grid-template-areas: 
     'header'
     'sidebar'
@@ -188,11 +188,41 @@ border-radius: 5px;
    .header h1,.header img,.header h4 {
     grid-column: 1/6;
    }
-   .nav-bar {
-    font-size: 80%;}
-   .sidebar img{
-    padding: 0px 10%;
-    margin: 0px 10%;
+  /* CAJA DEL MENU CON ICONO*/
+.toggle_menu{
+    width: 100%;
 }
-  
+.bt-menu {
+    display:block;
+    position: relative;
+    padding:20px;
+    background:#343a40;
+    color:#fff;
+    text-decoration:none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.icon-menu  {
+    float:right;
+    font-size : 2rem;
+}
+/* NAV BAR*/
+.nav-bar {
+    margin:0.5% 0px;
+    width:100%;
+    height:auto;
+    background: #343a404f;
+    border-radius: 5px;
+ }
+ .nav-bar  ul,.nav-bar li,.nav-bar a {
+    display:flex;
+    flex-flow: column;
+    font-size: 1.5rem;
+}
+/* IMAGEN DEL SIDEBAR*/
+
+.sidebar img{
+    max-width: auto;
+    padding: 0% 10%;
+}
 }

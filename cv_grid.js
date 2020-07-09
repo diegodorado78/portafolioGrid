@@ -1,5 +1,6 @@
-var span=document.querySelector("#span-mas");
-var btn_mas = document.querySelector(".boton-mas");
+//TOGGLE PARRAFO POST1
+var span = document.querySelector("#span-mas");
+var btn_mas = document.querySelector("#boton-mas");
 btn_mas.textContent="Leer más";//textContent para agregar texto
 
 btn_mas.addEventListener("click",function(){
@@ -11,18 +12,11 @@ btn_mas.addEventListener("click",function(){
     btn_mas.textContent="Leer más";
  }
 });
-
-function fibonacci(n) {
-    if (n <= 1) {
-      return n;
-    }
-     a = 0;
-     b = 1;
-    for (i = 2; i <= n; i++) {
-      temp = a;
-      a = b;
-      b += temp;
-    }
-    return b;
-  }
-    console.log(fibonacci(12));
+//TOGGLE MENU RESPONSIVE
+$(document).ready(main);
+var contador = 1;
+function main(){
+	$('.toggle_menu').click(function(){
+		 $('nav').toggle(); 
+	});
+}
