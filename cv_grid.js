@@ -14,9 +14,9 @@ btn_mas.addEventListener("click",function(){
 });
 //TOGGLE MENU RESPONSIVE
 $(document).ready(main);
-var contador = 1;
-function main(){
+function main() {
+  $('.nav-bar').css('display', 'none');
 	$('.toggle_menu').click(function(){
-		 $('nav').toggle(); 
+		 $('.nav-bar').toggle(); 
 	});
 }

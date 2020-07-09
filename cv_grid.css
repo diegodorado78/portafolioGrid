@@ -35,7 +35,7 @@ body{
     grid-template-columns: repeat(6,1fr);
     color: black;
 }
-.menu_bar{
+.toggle_menu{
     display: none;
 }
 .header h1{
@@ -190,6 +190,7 @@ border-radius: 5px;
    }
   /* CAJA DEL MENU CON ICONO*/
 .toggle_menu{
+    display:block;
     width: 100%;
 }
 .bt-menu {
@@ -223,6 +224,5 @@ border-radius: 5px;
 
 .sidebar img{
     max-width: auto;
-    padding: 0% 10%;
 }
 }
