@@ -5,10 +5,17 @@ lightgrey: #6c757d;
 verde success: #28a745
 azul oscuro:#141d26
 danger: #dc3545
+vh-vw viewport height, width, % de la pantalla que quiero usar
+margin en % es sobre el tamaño de la caja que lo contiene
+si hay dif div no podria aplicar el el mismo margen a todos
+id en html: puedo acceder desde js como window.#ID para add att
 */
 *{
     margin:0; /* defino margin y padding cero para quitar los default*/
     padding: 0; 
+    box-sizing: border-box; /* cajas de x tamaño incluido margin y padding*/
+    clear: both;/* con esto limpio los flotados*/
+
 }
 body{
     font-size: 20px;
@@ -19,13 +26,13 @@ body{
 /*ESTILOS GENERALES DEL GRID*/
 .grid{
     display: grid;
-    width: 80%;
+    width: 80vw;
     grid-template-areas: 
     'header header header header header header'
     'post1 post1 post1 post1 post1 sidebar'
     'post2 post2 post2 post2 post2 post2'
     'footer footer footer footer footer footer';
-    margin: auto 10%;
+    margin: auto 10vw;
     gap: 0.3em;/* espacio entre rejillas podria hacer lo mismo con margin de los elementos*/
 }
 /*ESTILOS HEADER*/
@@ -54,6 +61,7 @@ body{
     font-size: 1.5rem;
 }
 .nav-bar{ /* al usar > debe ser hijo directo*/
+    display: block;
     background-color: #343a40;
     width: 100%;
 }
@@ -88,6 +96,7 @@ grid-auto-flow: row;*/
      color:#6c757d; 
      text-align: justify;   
      border-radius: 5px;
+     padding: 0px 5% 0px 0px;
 }
 #boton-mas{
     text-decoration: none;
@@ -103,16 +112,16 @@ grid-auto-flow: row;*/
  }
 /* ESTILOS SIDEBAR*/
 
-.sidebar{ grid-area: sidebar;
+.sidebar{ 
+grid-area: sidebar;
 color: black;
 background-color: white;
 border-radius: 5px;
 padding: 0px;
 }
 .sidebar img{
-    max-width: 320px;
+    max-width: 100%;/* Es el total del ancho de la FR del grid*/
     border-radius: 50%;
-    margin: 0% 10%;
 }
 .contacto{
     width: 90%;
@@ -173,8 +182,8 @@ border-radius: 5px;
         display: grid;
     }
    .grid{
-       width: 90%;
-       margin: 0px 5%;
+    width: 80%;
+    margin: 0px 3vw;
     grid-template-areas: 
     'header'
     'sidebar'
@@ -193,7 +202,7 @@ border-radius: 5px;
     display:block;
     width: 100%;
 }
-.bt-menu {
+.bt-menu {/*Es la barra del menu*/
     display:block;
     position: relative;
     padding:20px;
@@ -203,15 +212,11 @@ border-radius: 5px;
     font-weight: bold;
     border-radius: 5px;
 }
-.icon-menu  {
-    float:right;
-    font-size : 2rem;
-}
+
 /* NAV BAR*/
 .nav-bar {
+    display: none;
     margin:0.5% 0px;
-    width:100%;
-    height:auto;
     background: #343a404f;
     border-radius: 5px;
  }
@@ -221,8 +226,9 @@ border-radius: 5px;
     font-size: 1.5rem;
 }
 /* IMAGEN DEL SIDEBAR*/
-
 .sidebar img{
-    max-width: auto;
+    max-width: 60vw;
+    margin: 0px 20vw;
 }
+
 }
